@@ -58,7 +58,8 @@ on init
     export SECONDARY_STORAGE /storage/usbdisk
 
 on fs
-    mount_all fstab.qcom
+    exec /sbin/dualboot_init ./fstab.qcom
+    mount_all ./fstab.qcom.patched
     restorecon -R /persist
     restorecon -R /proc/touchpad
     restorecon -R /proc/touchpanel

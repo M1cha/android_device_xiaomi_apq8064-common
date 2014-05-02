@@ -14,8 +14,10 @@
 # limitations under the License.
 #
 
-# inherit from Xiaomi common
--include device/xiaomi/common/BoardConfigCommon.mk
+BOARD_VENDOR := xiaomi
+
+# QCOM Power
+TARGET_POWERHAL_VARIANT := qcom
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8960

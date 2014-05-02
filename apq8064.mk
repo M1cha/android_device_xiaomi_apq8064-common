@@ -215,6 +215,3 @@ $(call inherit-product-if-exists, frameworks/native/build/phone-xhdpi-2048-dalvi
 
 # call the proprietary setup
 $(call inherit-product-if-exists, vendor/xiaomi/apq8064-common/apq8064-common-vendor.mk)
-
-# Inherit from xiaomi-common
-$(call inherit-product, device/xiaomi/common/common.mk)

@@ -23,6 +23,3 @@ lib/libmmjpeg_interface.so
 lib/libmmstillomx.so
 lib/liboemcamera.so
 
-# NFC
-etc/firmware/libpn544_fw.so:vendor/firmware/libpn544_fw.so
-

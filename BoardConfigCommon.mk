@@ -139,7 +139,6 @@ BOARD_SEPOLICY_UNION += \
        keystore.te \
        mediaserver.te \
        kickstart.te \
-       nfc.te \
        rild.te \
        surfaceflinger.te \
        system.te \

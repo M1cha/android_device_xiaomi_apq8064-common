@@ -14,8 +14,8 @@
 # limitations under the License.
 #
 
-# inherit from Oppo common
--include device/oppo/common/BoardConfigCommon.mk
+# inherit from Xiaomi common
+-include device/xiaomi/common/BoardConfigCommon.mk
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8960
@@ -40,7 +40,7 @@ BOARD_KERNEL_BASE := 0x80200000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom lpj=67677 user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 zcache
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000
-TARGET_KERNEL_SOURCE := kernel/oppo/n1
+TARGET_KERNEL_SOURCE := kernel/xiaomi/aries
 
 # Flags
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_BSP -DNO_SECURE_DISCARD
@@ -74,7 +74,7 @@ BOARD_HAVE_BLUETOOTH_QCOM := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 
 # Graphics
-BOARD_EGL_CFG := device/oppo/apq8064-common/configs/egl.cfg
+BOARD_EGL_CFG := device/xiaomi/apq8064-common/configs/egl.cfg
 USE_OPENGL_RENDERER := true
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
 TARGET_USES_C2D_COMPOSITION := true
@@ -118,14 +118,14 @@ BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_RECOVERY_SWIPE := true
 ifeq ($(WITH_SIMPLE_RECOVERY),true)
-    PRODUCT_EXTRA_RECOVERY_KEYS += vendor/extra/recovery_keys/OPPO_N1
-    TARGET_RECOVERY_FSTAB := device/oppo/apq8064-common/recovery.fstab
+    PRODUCT_EXTRA_RECOVERY_KEYS += vendor/extra/recovery_keys/XIAOMI_MI2
+    TARGET_RECOVERY_FSTAB := device/xiaomi/apq8064-common/recovery.fstab
 else
-    TARGET_RECOVERY_FSTAB := device/oppo/apq8064-common/rootdir/etc/fstab.qcom
+    TARGET_RECOVERY_FSTAB := device/xiaomi/apq8064-common/rootdir/etc/fstab.qcom
 endif
 
 # SELinux
-BOARD_SEPOLICY_DIRS += device/oppo/apq8064/sepolicy
+BOARD_SEPOLICY_DIRS += device/xiaomi/apq8064/sepolicy
 BOARD_SEPOLICY_UNION += \
        app.te \
        bluetooth.te \
@@ -147,4 +147,4 @@ BOARD_SEPOLICY_UNION += \
        wpa.te
 
 # inherit from the proprietary version
--include vendor/oppo/apq8064-common/BoardConfigVendor.mk
+-include vendor/xiaomi/apq8064-common/BoardConfigVendor.mk

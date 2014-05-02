@@ -57,8 +57,8 @@ PRODUCT_PACKAGES += \
 
 # Charger
 PRODUCT_PACKAGES += \
-    charger_res_oppo \
-    charger_oppo
+    charger_res_xiaommi \
+    charger_xiaomi
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -232,7 +232,7 @@ $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-dalv
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
 
 # call the proprietary setup
-$(call inherit-product-if-exists, vendor/oppo/apq8064-common/apq8064-common-vendor.mk)
+$(call inherit-product-if-exists, vendor/xiaomi/apq8064-common/apq8064-common-vendor.mk)
 
-# Inherit from oppo-common
-$(call inherit-product, device/oppo/common/common.mk)
+# Inherit from xiaomi-common
+$(call inherit-product, device/xiaomi/common/common.mk)

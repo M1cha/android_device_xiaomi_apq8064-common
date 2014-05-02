@@ -4,9 +4,9 @@ ifneq ($(BUILD_TINY_ANDROID),true)
 
 LOCAL_PATH := $(call my-dir)
 
-define _add-oppo-charger-image
+define _add-xiaomi-charger-image
 include $$(CLEAR_VARS)
-LOCAL_MODULE := device_oppo_oppo_charger_$(notdir $(1))
+LOCAL_MODULE := device_xiaomi_xiaomi_charger_$(notdir $(1))
 LOCAL_MODULE_STEM := $(notdir $(1))
 _img_modules += $$(LOCAL_MODULE)
 LOCAL_SRC_FILES := $1
@@ -19,10 +19,10 @@ endef
 _img_modules :=
 _images :=
 $(foreach _img, $(call find-subdir-subdir-files, "images", "*.png"), \
-  $(eval $(call _add-oppo-charger-image,$(_img))))
+  $(eval $(call _add-xiaomi-charger-image,$(_img))))
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := charger_res_images_oppo
+LOCAL_MODULE := charger_res_images_xiaomi
 LOCAL_MODULE_TAGS := optional
 LOCAL_REQUIRED_MODULES := $(_img_modules)
 include $(BUILD_PHONY_PACKAGE)
@@ -37,12 +37,12 @@ LOCAL_SRC_FILES := \
 
 LOCAL_CFLAGS += -DCHARGER_ENABLE_SUSPEND
 
-LOCAL_MODULE := charger_oppo
+LOCAL_MODULE := charger_xiaomi
 LOCAL_MODULE_TAGS := optional
 LOCAL_FORCE_STATIC_EXECUTABLE := true
 LOCAL_MODULE_PATH := $(TARGET_ROOT_OUT_SBIN)
 LOCAL_UNSTRIPPED_PATH := $(TARGET_ROOT_OUT_SBIN_UNSTRIPPED)
-LOCAL_ADDITIONAL_DEPENDENCIES := charger_res_images_oppo
+LOCAL_ADDITIONAL_DEPENDENCIES := charger_res_images_xiaomi
 LOCAL_C_INCLUDES := $(call include-path-for, recovery)
 
 LOCAL_STATIC_LIBRARIES := libminui libpixelflinger_static libpng

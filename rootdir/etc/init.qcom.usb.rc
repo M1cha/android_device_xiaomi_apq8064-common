@@ -26,7 +26,7 @@
 #
 
 on init
-    write /sys/class/android_usb/android0/f_rndis/manufacturer OPPO
+    write /sys/class/android_usb/android0/f_rndis/manufacturer Xiaomi
     write /sys/class/android_usb/android0/f_rndis/vendorID 22D9
     write /sys/class/android_usb/android0/f_rndis/wceis 1
 

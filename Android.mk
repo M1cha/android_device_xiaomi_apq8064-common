@@ -16,7 +16,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(BOARD_VENDOR),oppo)
+ifeq ($(BOARD_VENDOR),xiaomi)
 ifeq ($(TARGET_BOARD_PLATFORM),msm8960)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))

@@ -25,10 +25,7 @@ TARGET_SCREEN_WIDTH := 1080
 
 # Config scripts
 PRODUCT_PACKAGES += \
-    init.crda.sh \
-    init.qcom.bt.sh \
-    init.qcom.wifi.sh \
-    init.bbv.sh
+    init.qcom.bt.sh
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -141,9 +138,9 @@ PRODUCT_PACKAGES += \
 
 # WiFi
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/vendor/firmware/wlan/prima/WCNSS_cfg.dat \
+    $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/wifi/WCNSS_qcom_wlan_nv.bin \
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
 
@@ -152,14 +149,11 @@ PRODUCT_PACKAGES += \
     dualboot_init
 
 PRODUCT_PACKAGES += \
+    libwcnss_qmi \
     wcnss_service \
     crda \
     regulatory.bin \
-    linville.key.pub.pem \
-    libwfcu \
-    conn_init \
-    WCNSS_qcom_cfg.ini \
-    WCNSS_qcom_wlan_nv.bin
+    linville.key.pub.pem
 
 # Set default USB interface
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
@@ -178,6 +172,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196608 \
     ro.product.wireless=WCN3660 \
     ro.qualcomm.bt.hci_transport=smd \
+    ro.telephony.call_ring.multiple=false \
     ro.use_data_netmgrd=true \
     persist.data.netmgrd.qos.enable=true \
     wifi.interface=wlan0 \

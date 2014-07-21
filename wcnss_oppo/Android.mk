@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-ifeq ($(BOARD_VENDOR),oppo)
+ifeq ($(BOARD_VENDOR),xiaomi)
 ifeq ($(TARGET_BOARD_PLATFORM),msm8960)
 
 LOCAL_PATH := $(call my-dir)

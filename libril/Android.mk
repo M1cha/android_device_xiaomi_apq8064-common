@@ -1,8 +1,8 @@
 # Copyright 2006 The Android Open Source Project
 
 ifeq ($(BOARD_PROVIDES_LIBRIL),true)
-ifeq ($(BOARD_VENDOR),oppo)
-ifneq ($(filter find5 n1, $(TARGET_DEVICE)),)
+ifeq ($(BOARD_VENDOR),xiaomi)
+ifneq ($(filter xiaomi aries, $(TARGET_DEVICE)),)
 
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
